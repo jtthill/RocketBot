@@ -1,0 +1,6 @@
+[package]
+name = "rocketbot"
+version = "0.1.0"
+authors = ["itcsv_jtthill"]
+
+[dependencies]
