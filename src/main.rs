@@ -18,6 +18,12 @@ fn main() {
     for message in server.iter() {
         let message = message.unwrap(); //Just panic
         println!("{}", message);
+        match message.command {
+            Command::PRIVMSG(ref target, ref msg) => if msg.contains("pickles") {
+                server.send_privmsg(target, "Hi!").unwrap();
+            },
+            _ => (),
+        }
     }
     
 }

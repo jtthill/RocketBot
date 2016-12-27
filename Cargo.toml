@@ -1,7 +1,9 @@
 [package]
 name = "rocketbot"
 version = "0.1.0"
-authors = ["itcsv_jtthill"]
+authors = ["Joe \"RocketLobster\" Thill"]
 
-[dependencies]
-irc = "*"
+[dependencies.irc]
+version = "*"
+default-features = false
+features = ["encode"]
