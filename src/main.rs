@@ -5,11 +5,11 @@ use irc::client::prelude::*;
 
 fn main() {
     let cfg = Config {
-        nickname: Some(format!("rocketlobster")),
+        nickname: Some(format!("rocketlobot")),
         server: Some(format!("irc.chat.twitch.tv")),
         port: Some(6667),
         channels: Some(vec![format!("#rocketlobster")]),
-        password: Some(format!("oauth:607q5vftfd103fdft768l78m95qr8b")),
+        password: Some(format!("oauth:mqn0sjxtuojbstj81r37h3dztixk9c")),
         .. Default::default()
     };
 
