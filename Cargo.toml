@@ -7,3 +7,12 @@ authors = ["Joe \"RocketLobster\" Thill"]
 version = "*"
 default-features = false
 features = ["encode"]
+
+[dependencies.log]
+version = "*"
+
+[dependencies.fern]
+version = "*"
+
+[dependencies.time]
+version = "0.1"
