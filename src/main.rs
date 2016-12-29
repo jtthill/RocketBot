@@ -40,10 +40,14 @@ fn main() {
 
     for message in server.iter() {
         let message = message.unwrap(); //Just panic
-        info!("{}", message);
         match message.command {
-            Command::PRIVMSG(ref target, ref msg) => if msg.contains("pickles") {
-                server.send_privmsg(target, "Hi!").unwrap();
+            Command::PRIVMSG(ref target, ref msg) => {
+                // TODO: Take prefix, pull out poster string to use.
+                // extract_user() function?
+                info!("{}", message);
+                if msg.contains("pickles") {
+                    server.send_privmsg(target, "Hi!").unwrap();
+                }
             },
             _ => (),
         }
