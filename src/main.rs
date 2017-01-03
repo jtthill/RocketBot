@@ -38,6 +38,7 @@ fn main() {
     //     thread::sleep(Duration::new(10, 0));
     // }
 
+    // Parsing messages as they come in
     for message in server.iter() {
         let message = message.unwrap(); //Just panic
         match message.command {
@@ -47,6 +48,7 @@ fn main() {
                 info!("{}", message);
                 if msg.contains("pickles") {
                     server.send_privmsg(target, "Hi!").unwrap();
+                    info!("{}: Hi!", server.config().nickname());
                 }
             },
             _ => (),
