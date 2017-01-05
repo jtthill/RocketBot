@@ -17,19 +17,19 @@ impl TwitchBot {
     pub fn run(&self) {
         self.server.identify().unwrap();
         for message in self.server.iter() {
-        let message = message.unwrap(); //Just panic
-        match message.command {
-            Command::PRIVMSG(ref target, ref msg) => {
-                // TODO: Take prefix, pull out poster string to use.
-                // extract_user() function?
-                info!("{}", message);
-                if msg.contains("pickles") {
-                    self.server.send_privmsg(target, "Hi!").unwrap();
-                    info!("{}: Hi!", self.server.config().nickname());
-                }
-            },
-            _ => (),
+            let message = message.unwrap(); //Just panic
+            match message.command {
+                Command::PRIVMSG(ref target, ref msg) => {
+                    // TODO: Take prefix, pull out poster string to use.
+                    // extract_user() function?
+                    info!("{}", message);
+                    if msg.contains("pickles") {
+                        self.server.send_privmsg(target, "Hi!").unwrap();
+                        info!("{}: Hi!", self.server.config().nickname());
+                    }
+                },
+                _ => (),
+            }
         }
-    }
     }
 }
