@@ -10,7 +10,7 @@ pub fn setup() -> Result<(), fern::InitError> {
                 panic!("Cannot create file directory \"log\" due to existing file. Please rename or delete the file.");
             }
         },
-        Err(e) => {
+        Err(_) => {
             fs::DirBuilder::new().recursive(false).create("log").unwrap();
         }
     }

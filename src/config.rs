@@ -17,7 +17,7 @@ pub fn init_configs() -> irc::client::data::Config {
     }
 
     match fs::metadata("cfg/server.json") {
-        Ok(meta) => {
+        Ok(_) => {
             // File exists, load config from that
             debug!("Loading irc config from JSON file.");
             irc::client::data::Config::load("cfg/server.json").unwrap()
@@ -41,6 +41,6 @@ fn create_irc_config() -> irc::client::data::Config {
         password: Some(format!("oauth:mqn0sjxtuojbstj81r37h3dztixk9c")),
         .. Default::default()
     };
-    cfg.save("cfg/server.json");
+    cfg.save("cfg/server.json").unwrap();
     cfg
 }

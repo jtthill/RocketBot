@@ -8,9 +8,6 @@ pub mod config;
 pub mod twitch;
 pub mod logging;
 
-use irc::client::prelude::*;
-use std::default::Default;
-
 pub fn main() {
 
     // Set up logging
