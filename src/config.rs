@@ -16,11 +16,11 @@ pub fn init_configs() -> irc::client::data::Config {
         }
     }
 
-    match fs::metadata("cfg/server.json") {
+    match fs::metadata("cfg/irc.json") {
         Ok(_) => {
             // File exists, load config from that
             debug!("Loading irc config from JSON file.");
-            irc::client::data::Config::load("cfg/server.json").unwrap()
+            irc::client::data::Config::load("cfg/irc.json").unwrap()
         },
         Err(_) => {
             // File doesn't exist, create new config to save to.
@@ -30,7 +30,7 @@ pub fn init_configs() -> irc::client::data::Config {
 }
 
 fn create_irc_config() -> irc::client::data::Config {
-    println!("Creating new configuration for RocketBot.");
+    debug!("Creating new configuration for RocketBot.");
     // TODO: Add command line config building from user if file 
     // doesn't exist
     let cfg = irc::client::data::Config {
@@ -41,6 +41,6 @@ fn create_irc_config() -> irc::client::data::Config {
         password: Some(format!("oauth:mqn0sjxtuojbstj81r37h3dztixk9c")),
         .. Default::default()
     };
-    cfg.save("cfg/server.json").unwrap();
+    cfg.save("cfg/irc.json").unwrap();
     cfg
 }
