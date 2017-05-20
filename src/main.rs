@@ -7,6 +7,7 @@ extern crate time;
 pub mod config;
 pub mod twitch;
 pub mod logging;
+pub mod user;
 
 pub fn main() {
 
