@@ -30,7 +30,7 @@ pub fn init_configs() -> irc::client::data::Config {
 }
 
 fn create_irc_config() -> irc::client::data::Config {
-    println!("Creating new configuration for RocketBot.");
+    debug!("Creating new configuration for RocketBot.");
     // TODO: Add command line config building from user if file 
     // doesn't exist
     let cfg = irc::client::data::Config {
